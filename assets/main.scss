@@ -86,9 +86,9 @@ img {
 
 .post-card {
   padding: 25px;
-  border: 2px solid rgba(255, 230, 108, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
-  background-color: rgba(255, 247, 94, 0.1);
+  background-color: #f6f5f4;
 
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -101,7 +101,7 @@ img {
 
 .post-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 2px 5px rgba(255, 217, 64, 0.738);
+  box-shadow: 0px 2px 5px rgba(208, 208, 208, 0.738);
   cursor: pointer;
 }
 
