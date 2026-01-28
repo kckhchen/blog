@@ -2,35 +2,21 @@
 ---
 
 html {
-  font-family: 'Avenir';
+  font-size: 18px;
 }
+
+$base-font-family:
+  'Avenir',
+  -apple-system,
+  'Helvetica Neue',
+  sans-serif;
+$base-font-size: 18px;
+$content-width: 800px;
+$base-line-height: 1.5;
 
 @import 'minima';
 
-body {
-  font-family: 'Avenir';
-  font-size: 18px;
-  //   background-color: #24262b;
-  //   color: #e1e1e1;
-}
-
-.post-list-heading {
-  font-size: 0;
-  margin: 0;
-}
-
-.personal-site {
-  margin-bottom: 3rem;
-}
-
-.wrapper {
-  max-width: 800px;
-}
-
-.post-content {
-  line-height: 1.5em;
-}
-
+// post content
 .post-content h1,
 h2,
 h3,
@@ -54,38 +40,33 @@ img {
   margin: 2rem 0;
 }
 
-.MathJax_Display,
-.katex-display {
-  overflow-x: auto;
-  overflow-y: hidden;
+// config for landing page
+.post-list-heading {
+  font-size: 0;
+  margin: 0;
 }
 
 .post-title {
   font-weight: bold;
 }
 
-.post-list {
-  margin-left: 0;
-}
-
-.post-list li {
-  list-style-type: none;
-  margin-bottom: 30px;
-}
-
 .post-link {
-  color: #111111 !important;
-  font-weight: bold !important;
-  font-size: 24px !important;
-  text-decoration: none !important;
+  font-weight: bold;
+  font-size: 24px;
+  text-decoration: none;
 }
 
-.post-meta {
-  font-size: 16px;
+.post-link:visited {
+  color: #111111;
 }
 
 .post-list li h3 {
   margin: 0;
+}
+
+// custom elements
+.personal-site {
+  margin-bottom: 3rem;
 }
 
 .callout-title {
