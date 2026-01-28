@@ -19,7 +19,10 @@ layout: default
             {{ post.title | escape }}
           </a>
         </h3>
-        {%- if site.show_excerpts -%} {{ post.excerpt }} {%- endif -%}
+        <p class="post-excerpt">
+          {%- if site.show_excerpts -%} {{ post.content | markdownify |
+          strip_html | truncate: 170}} {%- endif -%}
+        </p>
       </div>
     </li>
     {%- endfor -%}
