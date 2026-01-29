@@ -58,7 +58,7 @@ $on-palm:          600px; // 轉成手機版的螢幕大小
 $on-laptop:        800px; // 轉成筆電版的螢幕大小
 ```
 
-<div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i>注意</div>
+<div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">注意</span></div>
  minima 不同版本可能會提供不同的變數，特別是最新版的 minima 3.0 以上差異可能更大。GitHub 預設是 2.5.1，但如果你有自己調整版本，請自行透過 `bundle show minima` 前往主題資料夾查詢。
 </div>
 
@@ -89,7 +89,7 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 
 ![]({{ site.baseurl }}{% link assets/images/customized-minima-theme.png %}){: width="500" }
 
-<div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i>提醒</div>
+<div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i><span class="callout-title-text">提醒</span></div>
 請注意 css 樣式一定要寫在 `@import 'minima';` 之後，但 sass 變數要定義在 `@import 'minima';` 之前。
 </div>
 ## 修改 source code
@@ -109,7 +109,7 @@ $ bundle show minima
 
 如果我希望日期出現在標題之上，我就可以到 minima theme 路徑中找到控制 post 頁面的檔案 `_layouts/post.html`。接著，我要**複製整個檔案，並且在我的網頁資料夾複製一樣的路徑**，也就是說，我的網頁資料夾根目錄會也要有一個 `_layouts/post.html`，並且要貼上 minima theme 的內容，之後再對這個檔案做修改。
 
-<div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i>注意</div>
+<div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">注意</span></div>
 請不要直接修改 minima theme 資料夾中的文件。這會造成兩個問題：
 1. 所有的變化會作用在**你所有使用這個 theme 的網站上**，我們只希望 local 覆寫
 2. 如果我們更新 minima 的 gem，原本的修改就會被更新覆蓋掉

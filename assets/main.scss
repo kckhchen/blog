@@ -150,8 +150,8 @@ img {
   margin-bottom: 2rem;
 }
 
-.callout-title {
-  font-size: 16px;
+.callout-title-text {
+  padding-top: 5px; // so that chinese characters align with icons
 }
 
 .post-card {
