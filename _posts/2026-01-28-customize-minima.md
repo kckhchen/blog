@@ -148,6 +148,30 @@ $ bundle show minima
 
 但是使用這種方法時請務必小心，因為 minima theme 路徑裡面許多檔案可能互相 import，如果沒有修改好可能會出現不預期的錯誤，請謹慎使用。
 
+## 最後小提醒
+
+如果你也是用 Visual Code Studio 編輯 scss 檔案的話，有很大的機率你會看到這個錯誤出現在 scss 檔案第一行：
+
+![]({{ site.baseurl }}{% link assets/images/vsc-scss-error.png %})
+
+這其實是因為 Jekyll 的 frontmatter（最上面那兩行`---`）和 scss 的規定衝突了，因為 frontmatter 不是 scss 檔案認識的字串。不過不用擔心，這個錯誤可以直接忽視，你的 Jekyll 網站還是可以正常跑起來。
+
+但如果你跟我一樣，看到錯誤就渾身不舒服，不喜歡 VSC 整天把檔案標成紅色，有一個很簡單的解決辦法，在 fontmatter 之後**隨便定義一個 css 樣式**，再寫設定就好了：
+
+```scss
+---
+---
+
+body {
+  margin: 0;
+}
+// 先隨便寫一個 css 樣式
+
+$base-font-size: 18px; // 再定義或 import minima
+```
+
+至於要寫什麼 css 樣式其實沒有很重要，因為後面 import minima 的時候這個樣式就會被覆蓋掉了～他只是一個阻止 VSC 報錯的小裝飾而已。
+
 ## 結語
 
 以上就是本篇文章的所有內容，希望大家都能夠好好利用 minima 送給我們的極大自由，將 blog 客製化成最有個人特色的樣子，Happy Blogging!
