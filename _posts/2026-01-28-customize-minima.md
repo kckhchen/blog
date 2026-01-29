@@ -79,13 +79,13 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 @import 'minima';
 
 .post-link {
-  color: #111111 !important; // 改成黑色
-  font-weight: bold !important; // 加粗
-  font-size: 24px !important; // 加大
+  color: #111111; // 改成黑色
+  font-weight: bold; // 加粗
+  font-size: 24px; // 加大
 }
 ```
 
-如果發現 css 樣式有 specificity 衝突，我們可以研究如何加強我們 selector 的 specificity，或是直接暴力用 `!important` 覆蓋（就像上面這樣），之後就可以得到像這樣的結果：
+如果發現 css 樣式有 specificity 衝突，我們可以研究如何加強我們 selector 的 specificity，或是直接暴力用 `!important` 覆蓋（雖然不太建議），之後就可以得到像這樣的結果：
 
 ![]({{ site.baseurl }}{% link assets/images/customized-minima-theme.png %}){: width="500" }
 
