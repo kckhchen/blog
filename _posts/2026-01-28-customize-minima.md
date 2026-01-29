@@ -92,6 +92,20 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 <div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i><span class="callout-title-text">提醒</span></div>
 請注意 css 樣式一定要寫在 `@import 'minima';` 之後，但 sass 變數要定義在 `@import 'minima';` 之前。
 </div>
+### 額外補充：利用 `@import` 模組化 css
+
+由於 minima 主題使用 scss，我們也可以跟著好好利用 scss 的 `@import` 優勢讓我們的 `main.scss` 更簡潔。這在我們客製化內容越來越多時會開始變得很有用。
+
+與其直接編輯 `main.scss`，我們可以建立一個 `_sass/` 資料夾在根目錄（這是 minima 預設讀取 scss 的地方），在那裡建立 scss 檔案。假設我建立了 `_sass/custom_style.scss`，我就可以回到 `main.scss` 並且輸入：
+
+```scss
+@import 'minima';
+
+@import 'custom_style'; // 提供檔名就好，不需要路徑和副檔名
+```
+
+到時候整個 scss 檔案的內容就會被 import 進來了～要注意的是，如果遇到樣式衝突，**比較晚 import 的檔案會覆蓋前面的樣式**，所以要特別注意 import 的順序。
+
 ## 修改 source code
 
 以上兩種方法應該可以解決 80% 的風格問題，但如果以上兩種都不能滿足你，我們還可以直接從源頭**覆蓋整個 minima 設定檔**。首先，我們要先找到電腦上的 minima 主題在哪裡，先使用以下指令：
@@ -110,9 +124,10 @@ $ bundle show minima
 如果我希望日期出現在標題之上，我就可以到 minima theme 路徑中找到控制 post 頁面的檔案 `_layouts/post.html`。接著，我要**複製整個檔案，並且在我的網頁資料夾複製一樣的路徑**，也就是說，我的網頁資料夾根目錄會也要有一個 `_layouts/post.html`，並且要貼上 minima theme 的內容，之後再對這個檔案做修改。
 
 <div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">注意</span></div>
-請不要直接修改 minima theme 資料夾中的文件。這會造成兩個問題：
+請不要直接修改 minima theme 資料夾中的文件。這會造成三個問題：
 1. 所有的變化會作用在**你所有使用這個 theme 的網站上**，我們只希望 local 覆寫
 2. 如果我們更新 minima 的 gem，原本的修改就會被更新覆蓋掉
+3. 如果你用 GitHub Pages 部署，你無法更改他們原生的 minima 路徑檔案，只能覆蓋
 </div>
 我在 `post.html` 裡面找到這個：
 
@@ -174,7 +189,7 @@ $base-font-size: 18px; // 再定義或 import minima
 
 ## 結語
 
-以上就是本篇文章的所有內容，希望大家都能夠好好利用 minima 送給我們的極大自由，將 blog 客製化成最有個人特色的樣子，Happy Blogging!
+以上就是本篇文章的所有內容，希望大家都能夠好好體驗 minima 送給我們的極大自由，將 blog 客製化成最有個人特色的樣子，Happy Blogging!
 
 <style>
 img {
