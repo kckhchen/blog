@@ -118,3 +118,7 @@ img {
   font-size: 14px;
   line-height: 3;
 }
+
+details > summary:first-of-type::after {
+  font-family: BlinkMacSystemFont, 'Segoe UI Symbol';
+}
