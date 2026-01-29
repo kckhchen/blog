@@ -16,6 +16,7 @@ $base-line-height: 1.6; // slightly larger for Chinese contents
 
 @import 'minima';
 
+// theme toggle
 body {
   --bg-clr: #fafafa;
   --font-clr: #202020;
@@ -38,6 +39,7 @@ body.dark-mode {
   --font-muted-clr: #c0c0c0;
 }
 
+// post content
 body {
   background-color: var(--bg-clr);
 }
@@ -47,14 +49,12 @@ body {
   color: var(--font-clr);
 }
 
-a {
-  color: var(--link-clr);
-}
-
+a,
+a:hover,
 a:visited {
   color: var(--link-clr);
 }
-// post content
+
 .post-content h1,
 h2,
 h3,
@@ -100,9 +100,11 @@ img {
 // config for landing page
 .site-title,
 .site-title:visited,
+.site-title:hover,
 .footer-heading,
 .footer-col {
   color: var(--site-title-clr);
+  text-decoration: none;
 }
 
 .site-title {
@@ -125,7 +127,8 @@ img {
   text-decoration: none;
 }
 
-.post-link:visited {
+.post-link:visited,
+.post-link:hover {
   color: var(--post-link-clr);
 }
 
@@ -202,7 +205,7 @@ body.dark-mode {
   @import 'monokai';
 }
 
-// light toggle
+// theme toggle icon
 
 .site-header .wrapper {
   display: flex;
