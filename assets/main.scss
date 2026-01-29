@@ -16,6 +16,44 @@ $base-line-height: 1.6; // slightly larger for Chinese contents
 
 @import 'minima';
 
+body {
+  --bg-clr: #fafafa;
+  --font-clr: #202020;
+  --link-clr: #2a7ae2;
+  --site-title-clr: #424242;
+  --code-bg-clr: #f6f6f6;
+  --card-bg-clr: #f6f5f4;
+  --post-link-clr: #111111;
+  --font-muted-clr: grey;
+}
+
+body.dark-mode {
+  --bg-clr: #202020;
+  --font-clr: #fafafa;
+  --link-clr: #d1e5ff;
+  --site-title-clr: #c1c1c1;
+  --code-bg-clr: #49483e;
+  --card-bg-clr: #444444;
+  --post-link-clr: #fafafa;
+  --font-muted-clr: #c0c0c0;
+}
+
+body {
+  background-color: var(--bg-clr);
+}
+
+.post-content,
+.post-title {
+  color: var(--font-clr);
+}
+
+a {
+  color: var(--link-clr);
+}
+
+a:visited {
+  color: var(--link-clr);
+}
 // post content
 .post-content h1,
 h2,
@@ -45,12 +83,12 @@ h6 {
 }
 
 code {
-  background-color: #f6f6f6;
+  background-color: var(--code-bg-clr);
   font-size: 16px;
 }
 
 .highlighter-rouge .highlight {
-  background-color: #f6f6f6;
+  background-color: var(--code-bg-clr);
   margin: 1.5rem 0;
   font-size: 16px;
 }
@@ -60,6 +98,17 @@ img {
 }
 
 // config for landing page
+.site-title,
+.site-title:visited,
+.footer-heading,
+.footer-col {
+  color: var(--site-title-clr);
+}
+
+.site-title {
+  font-weight: 500;
+}
+
 .post-list-heading {
   font-size: 0;
   margin: 0;
@@ -70,14 +119,14 @@ img {
 }
 
 .post-link {
-  color: #111111;
+  color: var(--post-link-clr);
   font-weight: bold;
   font-size: 24px;
   text-decoration: none;
 }
 
 .post-link:visited {
-  color: #111111;
+  color: var(--post-link-clr);
 }
 
 .post-link:hover {
@@ -95,6 +144,7 @@ img {
 
 // custom elements
 .personal-site {
+  color: var(--font-clr);
   text-align: center;
   font-weight: 500;
   margin-bottom: 2rem;
@@ -108,7 +158,7 @@ img {
   padding: 25px;
   border: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
-  background-color: #f6f5f4;
+  background-color: var(--card-bg-clr);
 
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -125,17 +175,87 @@ img {
   cursor: pointer;
 }
 
+.post-meta {
+  color: var(--font-muted-clr);
+}
+
 .post-excerpt {
-  color: grey;
+  color: var(--font-muted-clr);
   font-size: 16px;
 }
 
 .read-time {
-  color: grey;
+  color: var(--font-muted-clr);
   font-size: 14px;
   line-height: 3;
 }
 
 details > summary:first-of-type::after {
   font-family: BlinkMacSystemFont, 'Segoe UI Symbol';
+}
+
+body {
+  @import 'github';
+}
+
+body.dark-mode {
+  @import 'monokai';
+}
+
+// light toggle
+
+.site-header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.wrapper::after {
+  display: none;
+}
+
+.header-button {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-button:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.icon-sun {
+  display: none;
+  transition: transform 0.2s;
+}
+
+.icon-moon {
+  display: block;
+  transition: transform 0.2s;
+}
+
+body.dark-mode .icon-sun {
+  display: block;
+  transition: transform 0.2s;
+}
+
+body.dark-mode .icon-moon {
+  display: none;
+  transition: transform 0.2s;
+}
+
+.icon-sun:hover {
+  transform: rotate(-0.1turn);
+  transition: transform 0.5s;
+}
+
+.icon-moon:hover {
+  transform: translateY(-3px);
+  transition: transform 0.5s;
 }
