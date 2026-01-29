@@ -5,6 +5,7 @@ description: Archive of my thoughts and notes.
 baseurl: '/blog'
 url: 'https://kckhchen.com'
 github_username: kckhchen
+rss: RSS
 permalink: /:title/
 
 show_excerpts: true

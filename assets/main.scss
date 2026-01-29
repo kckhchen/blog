@@ -26,6 +26,7 @@ body {
   --card-bg-clr: #f6f5f4;
   --post-link-clr: #111111;
   --font-muted-clr: grey;
+  --box-shadow-clr: rgba(200, 200, 200, 0.7);
 }
 
 body.dark-mode {
@@ -37,6 +38,7 @@ body.dark-mode {
   --card-bg-clr: #444444;
   --post-link-clr: #fafafa;
   --font-muted-clr: #c0c0c0;
+  --box-shadow-clr: rgb(103, 103, 103);
 }
 
 // post content
@@ -140,11 +142,6 @@ img {
   margin: 10px 0 0px;
 }
 
-.rss-subscribe {
-  text-align: center;
-  font-weight: 500;
-}
-
 // custom elements
 .personal-site {
   color: var(--font-clr);
@@ -174,7 +171,7 @@ img {
 
 .post-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 2px 5px rgba(208, 208, 208, 0.738);
+  box-shadow: 0px 2px 5px var(--box-shadow-clr);
   cursor: pointer;
 }
 
@@ -197,17 +194,28 @@ details > summary:first-of-type::after {
   font-family: BlinkMacSystemFont, 'Segoe UI Symbol';
 }
 
-body {
-  @import 'github';
-}
-
 body.dark-mode {
   @import 'monokai';
+}
+
+// footer
+
+.footer-col-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.host {
+  font-size: 14px;
+  color: var(--font-muted-clr);
+  text-align: center;
 }
 
 // theme toggle icon
 
 .site-header .wrapper {
+  min-width: 300px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
