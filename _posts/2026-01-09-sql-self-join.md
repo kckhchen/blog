@@ -12,14 +12,14 @@ title: 從捷運轉乘問題看 SQL SELF JOIN
 
 ```sql
 SELECT * FROM route LIMIT 5;
-|--------|-----|---------|
-| lineid | pos | station |
-|--------|-----|---------|
-| BR     | 1   | 動物園   |
-| BR     | 2   | 木柵     |
-| BR     | 3   | 萬芳社區  |
-| BR     | 4   | 萬芳醫院  |
-| BR     | 5   | 辛亥     |
+--|--------|-----|---------|
+--| lineid | pos | station |
+--|--------|-----|---------|
+--| BR     | 1   | 動物園   |
+--| BR     | 2   | 木柵     |
+--| BR     | 3   | 萬芳社區  |
+--| BR     | 4   | 萬芳醫院  |
+--| BR     | 5   | 辛亥     |
 ...
 ```
 
@@ -34,14 +34,14 @@ SELECT a.station, a.pos, a.lineid, b.lineid, b.station
 FROM route a
 INNER JOIN route b ON a.lineid = b.lineid
 ORDER BY a.pos, a.station LIMIT 5;
-|---------|-----|--------|--------|----------|
-| station | pos | lineid | lineid | station  |
-|---------|-----|--------|--------|----------|
-| 動物園    | 1   | BR     | BR     | 辛亥     |
-| 動物園    | 1   | BR     | BR     | 萬芳醫院  |
-| 動物園    | 1   | BR     | BR     | 木柵     |
-| 動物園    | 1   | BR     | BR     | 萬芳社區  |
-| 動物園    | 1   | BR     | BR     | 動物園    |
+--|---------|-----|--------|--------|----------|
+--| station | pos | lineid | lineid | station  |
+--|---------|-----|--------|--------|----------|
+--| 動物園    | 1   | BR     | BR     | 辛亥     |
+--| 動物園    | 1   | BR     | BR     | 萬芳醫院  |
+--| 動物園    | 1   | BR     | BR     | 木柵     |
+--| 動物園    | 1   | BR     | BR     | 萬芳社區  |
+--| 動物園    | 1   | BR     | BR     | 動物園    |
 ```
 
 我特地將一樣的 `a.lineid` 和 `b.lineid` 都顯示出來，確定兩個 table 的確是用 `lineid` 串接的。而由於棕線上的每一個站點都有 `BR` 的標籤，所以第一站「動物園」就會被串接上**每一個棕線上的站**（所以才會在資料中重複這麼多次）。當然，第二站「木柵」也會被串接上棕線的每一站。
@@ -58,11 +58,11 @@ ORDER BY a.pos, a.station LIMIT 5;
 
 ```sql
 SELECT lineid FROM route WHERE station = '中山';
-|--------|
-| lineid |
-|--------|
-| R      |
-| G      |
+--|--------|
+--| lineid |
+--|--------|
+--| R      |
+--| G      |
 ```
 
 會發現紅線（R）和綠線（G）都會經過中山站。

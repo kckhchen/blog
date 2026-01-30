@@ -27,6 +27,8 @@ body {
   --post-link-clr: #111111;
   --font-muted-clr: grey;
   --box-shadow-clr: rgba(200, 200, 200, 0.7);
+  --toc-bg-clr: #f3f3f3;
+  --highlight-clr: rgba(176, 176, 176, 0.3);
 }
 
 body.dark-mode {
@@ -39,6 +41,8 @@ body.dark-mode {
   --post-link-clr: #fafafa;
   --font-muted-clr: #c0c0c0;
   --box-shadow-clr: rgb(103, 103, 103);
+  --toc-bg-clr: #292929;
+  --highlight-clr: rgba(186, 186, 186, 0.3);
 }
 
 // post content
@@ -68,31 +72,31 @@ h6 {
 }
 
 .post-title {
-  font-size: 40px;
+  font-size: 2rem;
   line-height: 1.5em;
 }
 
 .post-content h2 {
-  font-size: 32px;
+  font-size: 1.5rem;
 }
 
 .post-content h3 {
-  font-size: 24px;
+  font-size: 1.2rem;
 }
 
 .post-content h4 {
-  font-size: 20px;
+  font-size: 1.1rem;
 }
 
 code {
   background-color: var(--code-bg-clr);
-  font-size: 16px;
+  font-size: 0.85rem;
 }
 
 .highlighter-rouge .highlight {
   background-color: var(--code-bg-clr);
   margin: 1.5rem 0;
-  font-size: 16px;
+  font-size: 0.85rem;
 }
 
 img {
@@ -282,4 +286,84 @@ body.dark-mode .icon-moon {
 .katex {
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+@media (min-width: 1240px) {
+  .toc {
+    position: fixed;
+    overflow: auto;
+    top: 150px;
+    left: min(calc(100vw - 250px), 80vw);
+    transform: translateX(-50%);
+  }
+
+  .toc-entry a {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: none;
+    transition: all 0.2s ease;
+  }
+
+  .toc-entry a.active {
+    background-color: var(--highlight-clr);
+  }
+
+  .wrapper {
+    max-width: calc(30rem + 400px);
+    padding-right: 550px;
+  }
+}
+
+@media (max-width: 1240px) and (min-width: $on-palm) {
+  .wrapper {
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: $on-palm) {
+  .toc {
+    width: 420px;
+  }
+}
+
+@media (max-width: $on-palm) {
+  body {
+    font-size: 16px;
+  }
+  .post-title {
+    font-size: 1.7rem;
+  }
+}
+
+.toc {
+  box-sizing: border-box;
+  color: var(--font-clr);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--toc-bg-clr);
+  margin-bottom: 2rem;
+}
+
+#toc.section-nav {
+  margin-bottom: 0;
+}
+
+.toc a {
+  color: var(--font-clr);
+  margin-bottom: 0.3rem;
+}
+
+.toc .toc-h2 > a {
+  font-weight: 500;
+}
+
+.toc .toc-h3 {
+  font-size: 0.9rem;
+}
+
+.toc-title {
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }

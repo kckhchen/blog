@@ -220,6 +220,9 @@ GEM
       jekyll-seo-tag (~> 2.0)
     jekyll-titles-from-headings (0.5.3)
       jekyll (>= 3.3, < 5.0)
+    jekyll-toc (0.19.0)
+      jekyll (>= 3.9)
+      nokogiri (~> 1.12)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.13.0)
@@ -324,6 +327,7 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.9)
   jekyll-feed (~> 0.6)
+  jekyll-toc (~> 0.19.0)
 
 CHECKSUMS
   activesupport (8.1.2) sha256=88842578ccd0d40f658289b0e8c842acfe9af751afee2e0744a7873f50b6fdae
@@ -398,6 +402,7 @@ CHECKSUMS
   jekyll-theme-tactile (0.2.0) sha256=b7861b48aed5b2385d7a146b13f31cb6f37afe3107f4a6b93b1c932b2d242652
   jekyll-theme-time-machine (0.2.0) sha256=bc3490a7eccfc24ca671780c9d4f531500936a361690020b19defe6105d74fe2
   jekyll-titles-from-headings (0.5.3) sha256=77366754e361ea7b5d87881f5b1380835f5ce910c240a4d9ac2d7afe86d28481
+  jekyll-toc (0.19.0) sha256=8a8270f7e8e3d849e2035710b1713d0af5e2185a4bfaca70f9192ecf5ac50668
   jekyll-watch (2.2.1) sha256=bc44ed43f5e0a552836245a54dbff3ea7421ecc2856707e8a1ee203a8387a7e1
   jemoji (0.13.0) sha256=5d4c3e8e2cbbb2b73997c31294f6f70c94e4d4fade039373e86835bcf5529e7c
   json (2.18.0) sha256=b10506aee4183f5cf49e0efc48073d7b75843ce3782c68dbeb763351c08fd505
