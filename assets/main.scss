@@ -225,11 +225,12 @@ body.dark-mode {
 
 .site-header .wrapper {
   min-width: 300px;
+  max-width: 1500px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 .wrapper::after {
@@ -312,6 +313,11 @@ body.dark-mode .icon-moon {
   .wrapper {
     max-width: calc(30rem + 400px);
     padding-right: 550px;
+  }
+
+  .home {
+    position: relative;
+    left: 250px;
   }
 }
 
