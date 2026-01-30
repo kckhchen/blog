@@ -296,6 +296,7 @@ body.dark-mode .icon-moon {
     top: 150px;
     left: min(calc(100vw - 250px), 80vw);
     transform: translateX(-50%);
+    max-height: 50vw;
   }
 
   .toc-entry a {
