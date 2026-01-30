@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   {%- if page.title -%}
   <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
+  {%- endif -%} {{s content }} {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
     {%- for post in site.posts -%}
@@ -34,17 +34,4 @@ layout: default
   {%- endif -%}
 </div>
 
-<script>
-  const postList = document.querySelector('.post-list');
-  postList.addEventListener('click', openPost);
-
-  function openPost(e) {
-    const card = e.target.closest('.post-card');
-    if (!card) return;
-
-    const postLink = card.querySelector('a');
-    if (e.target === postLink) return;
-
-    window.location.href = postLink.href;
-  }
-</script>
+{% include post_card_links.html %}

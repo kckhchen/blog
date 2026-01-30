@@ -59,35 +59,4 @@
   </div>
 </header>
 
-<script>
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.querySelector('.theme-icon');
-  const body = document.body;
-  function setDarkTheme(isDark) {
-    if (isDark) {
-      body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  const currentTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia(
-    '(prefers-color-scheme: dark)',
-  ).matches;
-
-  if (currentTheme === 'dark') {
-    setDarkTheme(true);
-  } else if (currentTheme === 'light') {
-    setDarkTheme(false);
-  } else {
-    setDarkTheme(systemPrefersDark);
-  }
-
-  themeToggleBtn.addEventListener('click', () => {
-    const isDark = body.classList.contains('dark-mode');
-    setDarkTheme(!isDark);
-  });
-</script>
+{% include theme_toggle.html %}

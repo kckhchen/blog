@@ -1,0 +1,33 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const headers = document.querySelectorAll(
+      '.post-content h2, .post-content h3',
+    );
+    const tocLinks = document.querySelectorAll('.toc-entry a');
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -90% 0px',
+      threshold: 0,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach((link) => link.classList.remove('active'));
+
+          const id = entry.target.getAttribute('id');
+          const activeLink = document.querySelector(
+            `.toc-entry a[href="#${id}"]`,
+          );
+
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    }, observerOptions);
+
+    headers.forEach((header) => observer.observe(header));
+  });
+</script>
