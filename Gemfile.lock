@@ -327,6 +327,7 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.9)
   jekyll-feed (~> 0.6)
+  jekyll-paginate (~> 1.1)
   jekyll-toc (~> 0.19.0)
 
 CHECKSUMS

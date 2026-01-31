@@ -14,6 +14,10 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-toc
+  - jekyll-paginate
+
+paginate: 10
+paginate_path: '/page:num/'
 
 defaults:
   - scope:

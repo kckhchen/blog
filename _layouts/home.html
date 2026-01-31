@@ -8,7 +8,8 @@ layout: default
   {%- endif -%} {{ content }} {%- if site.posts.size > 0 -%}
   <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
   <ul class="post-list">
-    {%- for post in site.posts -%}
+    {% assign posts = paginator.posts | default: site.posts %} {% for post in
+    posts %}
     <li>
       <div class="post-card">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
@@ -31,7 +32,32 @@ layout: default
     </li>
     {%- endfor -%}
   </ul>
-  {%- endif -%}
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a
+      href="{{ paginator.previous_page_path | relative_url }}"
+      class="previous"
+    >
+      &laquo; Previous
+    </a>
+    {% else %}
+    <span class="previous disabled">&laquo; Previous</span>
+    {% endif %}
+
+    <span class="page_number">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="next">
+      Next &raquo;
+    </a>
+    {% else %}
+    <span class="next disabled">Next &raquo;</span>
+    {% endif %}
+  </div>
+  {% endif %} {%- endif -%}
 </div>
 
 {% include post_card_links.html %}
