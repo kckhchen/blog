@@ -11,6 +11,10 @@
   border-radius: 4px;
 }
 .pagination .disabled {
-  color: #ccc;
+  color: var(--font-muted-clr);
   margin: 0 10px;
+}
+
+.page_number {
+  color: var(--font-clr);
 }
