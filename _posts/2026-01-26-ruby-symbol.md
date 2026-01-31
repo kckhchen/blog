@@ -8,6 +8,8 @@ title: Ruby 的 Symbol 是什麼？
 
 在 Ruby 中，Symbol 長得像是一個由冒號開頭的變數，例如 `:email` 或是 `:username`。跟字串不同，Ruby 以及幾乎所有程式語言中，字串的長相都是由單引號或是雙引號包覆：`"username"` 或是 `'a cool string'`。
 
+## 可變性和記憶體位置
+
 這兩個物件的最大差異在於可變性（mutability）：Symbol 是不可變的（immutable），而字串是可變的（mutable）。我們可以直接用一個例子示範：
 
 ```ruby
@@ -109,7 +111,7 @@ Ruby 並沒有給予 Symbol 更改長相的功能。Symbol 的不可變性給了
 
 因此 Ruby 的 Symbol 並不是什麼特別的物件，對於其他語言來說，他的功能就跟字串（幾乎）一模一樣。所以，或許 Ruby 中更令人好奇的是：Ruby 的字串到底為什麼長這樣？
 
-原因之一可能要追溯到 Ruby 發明初期的強項：字串處理。試想今天在 Python 上，每當我們要對字串做處理時，我們每次都會需要重新 assign 一次（因為字串是不可變的）：
+原因之一可能要追溯到 Ruby 發明初期的強項：字串處理（String Manipulation）。試想今天在 Python 上，每當我們要對字串做處理時，我們每次都會需要重新 assign 一次（因為字串是不可變的）：
 
 ```python
 >>> old_str = "abc"
@@ -157,3 +159,27 @@ Ruby 並沒有給予 Symbol 更改長相的功能。Symbol 的不可變性給了
 ```
 
 這就使得 Ruby 的字串更像是其他語言的字串，也保障了變數的安全性。
+
+## Symbol 和 String 的轉換
+
+除了上面了 `#freeze` 方法讓 string 更像 symbol 之外，其實 Ruby 也有提供 symbol 和 string 之間型態互換的方法。
+
+如果要將 Symbol 轉為 String，可以使用 `#to_s` 方法：
+
+```ruby
+> sym = :abc
+> str = sym.to_s
+> str.class
+#=> String
+```
+
+如果要將 String 轉為 Symbol，可以使用 `#to_sym` 方法：
+
+```ruby
+> str = "abc"
+> sym = str.to_sym
+> sym.class
+#=> Symbol
+```
+
+這讓我們有更多的彈性可以使用 Symbol 和 String 型別。
