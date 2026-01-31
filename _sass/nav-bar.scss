@@ -1,0 +1,78 @@
+.header-button {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header-button:hover,
+.social-icon:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.icon-sun {
+  display: none;
+  transition: transform 0.2s ease;
+}
+
+.icon-sun:hover {
+  transform: rotate(-0.1turn);
+  transition: transform 0.5s;
+}
+
+body.dark-mode .icon-sun {
+  color: var(--font-muted-clr);
+  display: block;
+  transition: transform 0.2s;
+}
+
+body.dark-mode .icon-sun:hover {
+  color: var(--font-clr);
+}
+
+.icon-moon {
+  color: var(--font-muted-clr);
+  display: block;
+  transition: color 0.2s ease;
+}
+
+body.dark-mode .icon-moon {
+  display: none;
+  transition: transform 0.2s;
+}
+
+.icon-moon:hover {
+  color: var(--font-clr);
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-bar > a {
+  line-height: 0;
+}
+
+.social-icon {
+  color: var(--font-muted-clr);
+  transition: color 0.2s ease;
+}
+
+.social-icon:hover {
+  color: var(--font-clr);
+}
+
+@media (max-width: $on-palm) {
+  .nav-bar {
+    gap: 15px;
+  }
+  .site-header .wrapper {
+    padding: 0 30px;
+  }
+}

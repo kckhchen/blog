@@ -1,0 +1,7 @@
+.callout-title-text {
+  padding-top: 5px; // so that chinese characters align with icons
+}
+
+details > summary:first-of-type::after {
+  font-family: BlinkMacSystemFont, 'Segoe UI Symbol';
+}
