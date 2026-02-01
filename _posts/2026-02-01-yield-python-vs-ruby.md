@@ -146,7 +146,7 @@ def _iterator():
 
 ### Python yield 的好處
 
-這時許多人可能會有一個疑問：如果我要使用 loop，為什麼不直接 iterater over 一個 list 就好，要這麼麻煩使用一個有 `yield` 的函式呢？
+這時許多人可能會有一個疑問：如果我要使用 loop，為什麼不直接 iterate over 一個 list 就好，要這麼麻煩使用一個有 `yield` 的函式呢？
 
 主要是因為函式在加上 `yield` 之後，就不再是一般的函式，而會變成生成器。生成器在回傳一值之後，就會馬上「忘記」，不會將值儲存在記憶體中（也就是 lazy loading），這對於非常大筆的數據或是很佔空間的檔案非常有利，因為這可以讓我們節省非常多記憶體空間。
 
@@ -275,7 +275,7 @@ printer([1, 3, 5]) { |i|  puts i }
 > `printer([1, 2, 3])` 被呼叫 → 透過 `#each` 方法每次 yield 一個值給 `{ puts i }` 的 block → block 執行完畢，控制權交還給 `printer` → 進入下一次迴圈 → ... → list 枯竭，程式結束
 
 <div class="callout callout-error" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="zap"></i><span class="callout-title-text">警告</span></div>
-這在 Ruby 中一樣是很不直覺且曲折的寫法，僅供展示比較。而且 `#each` 方法已經內建使用 `yield` 了（有沒有發現 `#each` 的使用方式也是傳入一個 block？）。另外，如果想在 Ruby 中實現 lazy loading，必須額外調用 `#lazy` 方法（Ruby 2.0+）或是使用 `Emumerator`，但這不在本次的討論範圍內。
+這在 Ruby 中一樣是很不直覺且曲折的寫法，僅供展示比較。而且 `#each` 方法已經內建使用 `yield` 了（有沒有發現 `#each` 的使用方式也是傳入一個 block？）。另外，如果想在 Ruby 中實現 lazy loading，必須額外調用 `#lazy` 方法（Ruby 2.0+）或是使用 `Enumerator`，但這不在本次的討論範圍內。
 </div>
 ## 結論
 
