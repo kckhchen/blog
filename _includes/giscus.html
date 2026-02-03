@@ -29,14 +29,12 @@
     iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
   }
 
-  //   window.addEventListener('message', (event) => {
-  //     if (
-  //       event.origin === 'https://giscus.app' &&
-  //       !(event.data && event.data.giscus && event.data.giscus.discussion)
-  //     ) {
-  //       return;
-  //     }
-  //     const isDark = document.body.classList.contains('dark-mode');
-  //     setGiscusTheme(!isDark);
-  //   });
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://giscus.app') return;
+    if (!(event.data && event.data.giscus)) return;
+
+    const isDark = document.body.classList.contains('dark-mode');
+    const theme = isDark ? 'dark' : 'light';
+    setGiscusTheme(theme);
+  });
 </script>
