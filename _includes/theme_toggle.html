@@ -2,8 +2,8 @@
   const themeToggleBtn = document.getElementById('theme-toggle');
   const themeIcon = document.querySelector('.theme-icon');
   const body = document.body;
-  function setDarkTheme(isDark) {
-    if (isDark) {
+  function setTheme(theme) {
+    if (theme === 'dark') {
       body.classList.add('dark-mode');
       localStorage.setItem('theme', 'dark');
     } else {
@@ -18,15 +18,19 @@
   ).matches;
 
   if (currentTheme === 'dark') {
-    setDarkTheme(true);
+    setTheme('dark');
   } else if (currentTheme === 'light') {
-    setDarkTheme(false);
+    setTheme('light');
   } else {
-    setDarkTheme(systemPrefersDark);
+    setTheme(systemPrefersDark ? 'dark' : 'light');
   }
 
-  themeToggleBtn.addEventListener('click', () => {
-    const isDark = body.classList.contains('dark-mode');
-    setDarkTheme(!isDark);
+  themeToggleBtn.addEventListener('click', function () {
+    setTimeout(() => {
+      const isDark = body.classList.contains('dark-mode');
+      const theme = isDark ? 'light' : 'dark';
+      setTheme(theme);
+      setGiscusTheme(theme);
+    }, 10);
   });
 </script>
