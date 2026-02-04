@@ -1,4 +1,5 @@
 .post-card {
+  position: relative;
   padding: 25px;
   border: 2px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
@@ -67,6 +68,16 @@
 
 .post-list li h3 {
   margin: 10px 0 0px;
+}
+
+.stretched-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {

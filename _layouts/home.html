@@ -16,7 +16,10 @@ layout: default
         -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
         <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
+          <a
+            class="post-link stretched-link"
+            href="{{ post.url | relative_url }}"
+          >
             {{ post.title | escape }}
           </a>
         </h3>
@@ -59,5 +62,3 @@ layout: default
   </div>
   {% endif %} {%- endif -%}
 </div>
-
-{% include post_card-links.html %}
