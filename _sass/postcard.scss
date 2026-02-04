@@ -24,6 +24,12 @@
 }
 
 .post-excerpt {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
   color: var(--font-muted-clr);
   font-size: 16px;
 }
@@ -61,4 +67,11 @@
 
 .post-list li h3 {
   margin: 10px 0 0px;
+}
+
+@media (max-width: 768px) {
+  .post-excerpt {
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
 }
