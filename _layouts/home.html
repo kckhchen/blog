@@ -11,7 +11,7 @@ layout: default
     {% assign posts = paginator.posts | default: site.posts %} {% for post in
     posts %}
     <li>
-      <div class="post-card">
+      <article class="post-card">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
         -%}
         <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -31,7 +31,7 @@ layout: default
           {%- if site.show_excerpts -%} {{ post.content | markdownify |
           strip_html | truncate: 150 }} {%- endif -%}
         </p>
-      </div>
+      </article>
     </li>
     {%- endfor -%}
   </ul>
