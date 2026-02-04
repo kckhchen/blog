@@ -1,0 +1,39 @@
+// theme toggle
+body {
+  --bg-clr: #fafafa;
+  --font-clr: #202020;
+  --link-clr: #2a7ae2;
+  --site-title-clr: #424242;
+  --code-bg-clr: #f6f6f6;
+  --card-bg-clr: #f6f5f4;
+  --post-link-clr: #111111;
+  --font-muted-clr: grey;
+  --box-shadow-clr: rgba(200, 200, 200, 0.7);
+  --toc-bg-clr: #f3f3f3;
+  --highlight-clr: rgba(176, 176, 176, 0.3);
+}
+
+body.dark-mode {
+  --bg-clr: #202020;
+  --font-clr: #fafafa;
+  --link-clr: #d1e5ff;
+  --site-title-clr: #c1c1c1;
+  --code-bg-clr: #49483e;
+  --card-bg-clr: #444444;
+  --post-link-clr: #fafafa;
+  --font-muted-clr: #c0c0c0;
+  --box-shadow-clr: rgb(103, 103, 103);
+  --toc-bg-clr: #292929;
+  --highlight-clr: rgba(186, 186, 186, 0.3);
+}
+
+// basic settings
+body {
+  background-color: var(--bg-clr);
+}
+
+a,
+a:hover,
+a:visited {
+  color: var(--link-clr);
+}

@@ -17,124 +17,15 @@ $base-line-height: 1.6; // slightly larger for Chinese contents
 
 @import 'minima';
 
-// theme toggle
-body {
-  --bg-clr: #fafafa;
-  --font-clr: #202020;
-  --link-clr: #2a7ae2;
-  --site-title-clr: #424242;
-  --code-bg-clr: #f6f6f6;
-  --card-bg-clr: #f6f5f4;
-  --post-link-clr: #111111;
-  --font-muted-clr: grey;
-  --box-shadow-clr: rgba(200, 200, 200, 0.7);
-  --toc-bg-clr: #f3f3f3;
-  --highlight-clr: rgba(176, 176, 176, 0.3);
-}
-
-body.dark-mode {
-  --bg-clr: #202020;
-  --font-clr: #fafafa;
-  --link-clr: #d1e5ff;
-  --site-title-clr: #c1c1c1;
-  --code-bg-clr: #49483e;
-  --card-bg-clr: #444444;
-  --post-link-clr: #fafafa;
-  --font-muted-clr: #c0c0c0;
-  --box-shadow-clr: rgb(103, 103, 103);
-  --toc-bg-clr: #292929;
-  --highlight-clr: rgba(186, 186, 186, 0.3);
-}
-
-// basic settings
-body {
-  background-color: var(--bg-clr);
-}
-
-a,
-a:hover,
-a:visited {
-  color: var(--link-clr);
-}
-
-// header
-.site-header .wrapper {
-  min-width: 300px;
-  max-width: 1500px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 50px;
-}
-
-.site-header .wrapper::after {
-  display: none;
-}
-
-.site-title,
-.site-title:visited,
-.site-title:hover {
-  font-weight: 500;
-  color: var(--site-title-clr);
-  text-decoration: none;
-}
-
-// footer
-.host {
-  font-size: 14px;
-  color: var(--font-muted-clr);
-  text-align: center;
-}
-
-// 404 page
-.embed-astley {
-  display: flex;
-  justify-content: center;
-}
-
-//mathjax
-.MathJax,
-.katex {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-// custom elements
-.personal-site {
-  color: var(--font-clr);
-  text-align: center;
-  font-weight: 500;
-  margin-bottom: 2rem;
-}
-
-// others
+@import 'base';
+@import 'header';
+@import 'footer';
+@import 'mathjax';
+@import '404';
+@import 'custom';
 @import 'pagination';
 @import 'post-content';
 @import 'callouts';
 @import 'nav-bar';
 @import 'toc';
 @import 'postcard';
-
-// responsive design
-@media (min-width: 1240px) {
-  .wrapper:has(.post.h-entry) {
-    max-width: calc(30rem + 400px);
-    padding-right: 550px;
-  }
-}
-
-@media (max-width: 1240px) and (min-width: $on-palm) {
-  .wrapper:has(.post.h-entry) {
-    padding: 0 50px;
-  }
-}
-
-@media (max-width: $on-palm) {
-  body {
-    font-size: 16px;
-  }
-  .post-title {
-    font-size: 1.7rem;
-  }
-}

@@ -48,3 +48,26 @@ img {
 body.dark-mode {
   @import 'monokai';
 }
+
+// responsive design
+@media (min-width: 1240px) {
+  .wrapper:has(.post.h-entry) {
+    max-width: calc(30rem + 400px);
+    padding-right: 550px;
+  }
+}
+
+@media (max-width: 1240px) and (min-width: $on-palm) {
+  .wrapper:has(.post.h-entry) {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: $on-palm) {
+  body {
+    font-size: 16px;
+  }
+  .post-title {
+    font-size: 1.7rem;
+  }
+}

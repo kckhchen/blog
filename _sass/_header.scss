@@ -1,0 +1,22 @@
+// header
+.site-header .wrapper {
+  min-width: 300px;
+  max-width: 1500px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+}
+
+.site-header .wrapper::after {
+  display: none;
+}
+
+.site-title,
+.site-title:visited,
+.site-title:hover {
+  font-weight: 500;
+  color: var(--site-title-clr);
+  text-decoration: none;
+}
