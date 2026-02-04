@@ -25,11 +25,11 @@ layout: default
         </h3>
         <span class="read-time"
           >{{ post.content | strip_html | strip_newlines | split: "" | size |
-          divided_by:600 | round }} mins read</span
+          divided_by:600 | round }} min read</span
         >
         <p class="post-excerpt">
           {%- if site.show_excerpts -%} {{ post.content | markdownify |
-          strip_html | truncate: 150}} {%- endif -%}
+          strip_html | truncate: 150 }} {%- endif -%}
         </p>
       </div>
     </li>
