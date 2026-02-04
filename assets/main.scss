@@ -118,19 +118,14 @@ a:visited {
 
 // responsive design
 @media (min-width: 1240px) {
-  .wrapper {
+  .wrapper:has(.post.h-entry) {
     max-width: calc(30rem + 400px);
     padding-right: 550px;
-  }
-
-  .home {
-    position: relative;
-    left: 250px;
   }
 }
 
 @media (max-width: 1240px) and (min-width: $on-palm) {
-  .wrapper {
+  .wrapper:has(.post.h-entry) {
     padding: 0 50px;
   }
 }
