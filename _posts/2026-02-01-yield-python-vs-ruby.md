@@ -67,6 +67,7 @@ calc(3, 4, &multiply)
 <div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">注意</span></div>
 `yield` 僅接受 block 作為傳入值，因此當使用 lambda 時，不能直接傳入 `calc(3, 4, multiply)`，必須使用 `&` 將 lambda 物件中的 block 取出。
 
+
 </div>
 因此，有 `yield` 的函式的工作流程大概像這樣：
 
@@ -115,6 +116,7 @@ check_block
 
 <div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i><span class="callout-title-text">注意</span></div>
 上方所有函式都不需要特別加入 `&block` 作為引數，因為所有 Ruby 函式都預設可以接受一個 block 作為額外參數。如果對這部分有更多興趣，這篇很有啟發性的 [Medium 文章](https://medium.com/@jinghua.shih/ruby-%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3-ruby-block-2387b74f188b) 推薦給你！
+
 </div>
 
 ## Python 中的 yield
@@ -246,6 +248,7 @@ add(1, 2)
 
 <div class="callout callout-error" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="zap"></i><span class="callout-title-text">警告</span></div>
 以上的程式碼僅供示例和比較用途，這並非 Python 的 `yield` 的設計邏輯，強硬逼迫 Python 這樣運作只會讓程式碼變得非常難讀。另外，其實 Python 有提供 `@contextmanager` 裝飾子讓整個函式更簡潔、更像 Ruby，不過已經超出本次討論範圍。
+
 </div>
 ### 腦力激盪：用 Ruby yield 寫 Python 邏輯
 
@@ -276,6 +279,7 @@ printer([1, 3, 5]) { |i|  puts i }
 
 <div class="callout callout-error" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="zap"></i><span class="callout-title-text">警告</span></div>
 這在 Ruby 中一樣是很不直覺且曲折的寫法，僅供展示比較。而且 `#each` 方法已經內建使用 `yield` 了（有沒有發現 `#each` 的使用方式也是傳入一個 block？）。另外，如果想在 Ruby 中實現 lazy loading，必須額外調用 `#lazy` 方法（Ruby 2.0+）或是使用 `Enumerator`，但這不在本次的討論範圍內。
+
 </div>
 ## 結論
 

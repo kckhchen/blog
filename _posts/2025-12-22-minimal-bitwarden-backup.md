@@ -104,6 +104,7 @@ bw export --format encrypted_json --password "my-powerful-password" --output "~/
 
 <div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">Warning</span></div>
 （警告：利用此種方法設定密碼有一個致命缺點，也就是備份檔案的密碼會以純文字的形式存在這份 Shell Script 當中，也就是若有人開啟這份 Shell Script 就可以直接讀到你的備份檔案密碼！其實這裡也可以再叫出一個 prompt 讓使用者自行輸入每次的密碼，不過就不在本次的介紹範圍中。總之若要自己從頭建立這份 Shell Script，請務必使用額外的加密管道保障自己的安全！）另外，文章最後提供的工具包可以很大一部分減輕這個指令帶來的風險。
+
 </div>
 ### 登出
 

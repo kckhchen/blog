@@ -58,6 +58,7 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 
 <div class="callout callout-warning" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="circle-alert"></i><span class="callout-title-text">注意</span></div>
  minima 不同版本可能會提供不同的變數，特別是最新版的 minima 3.0 以上差異可能更大。GitHub 預設是 2.5.1，但如果你有自己調整版本，請自行透過 `bundle show minima` 前往主題資料夾查詢。
+
 </div>
 
 ## 覆寫 css 樣式
@@ -66,7 +67,7 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 
 例如，我不喜歡 minima 原生的文章列表顯示方式：
 
-![]({{ site.baseurl }}{% link assets/images/minima-default-page.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/minima-default-page.png %}){: width="500" }
 
 透過 inspect element，我發現那些文章標題的 class 是 `post-link`。那我就可以這樣覆蓋樣式：
 
@@ -85,16 +86,17 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 
 如果發現 css 樣式有 specificity 衝突，我們可以研究如何加強我們 selector 的 specificity，或是直接暴力用 `!important` 覆蓋（雖然不太建議），之後就可以得到像這樣的結果：
 
-![]({{ site.baseurl }}{% link assets/images/customized-minima-theme.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/customized-minima-theme.png %}){: width="500" }
 
 <div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i><span class="callout-title-text">提醒</span></div>
 請注意 css 樣式一定要寫在 `@import 'minima';` 之後，但 sass 變數要定義在 `@import 'minima';` 之前。
+
 </div>
 ### 額外補充：利用 `@import` 模組化 css
 
 由於 minima 主題使用 scss，我們也可以跟著好好利用 scss 的 `@import` 優勢讓我們的 `main.scss` 更簡潔。這在我們客製化內容越來越多時會開始變得很有用。
 
-與其直接編輯 `main.scss`，我們可以建立一個 `_sass/` 資料夾在根目錄（這是 minima 預設讀取 scss 的地方），在那裡建立 scss 檔案。假設我建立了 `_sass/custom_style.scss`，我就可以回到 `main.scss` 並且輸入：
+與其直接編輯 `main.scss`，我們可以建立一個 `_sass/` 資料夾在根目錄（這是 minima 預設讀取 scss 的地方），在那裡建立 scss 檔案。假設我建立了 `_sass/_custom_style.scss`，我就可以回到 `main.scss` 並且輸入：
 
 ```scss
 @import 'minima';
@@ -104,6 +106,11 @@ $on-laptop:        800px; // 轉成筆電版的螢幕大小
 
 到時候整個 scss 檔案的內容就會被 import 進來了～要注意的是，如果遇到樣式衝突，**比較晚 import 的檔案會覆蓋前面的樣式**，所以要特別注意 import 的順序。
 
+
+<div class="callout callout-note" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="pen"></i><span class="callout-title-text">注意</span></div>
+`_sass/` 資料夾中被 import 的 scss 檔案建議在檔名前方加上一個底線 `_`（如上面示範的 `_custom_style.scss`，這樣的話這個檔案會被當作 partial 匯入，最後網頁中只會有一個 `main.css` 的大檔案，其他小檔案不會被上傳，讓你的網頁架構保持乾淨。
+
+</div>
 ## 修改 source code
 
 以上兩種方法應該可以解決 80% 的風格問題，但如果以上兩種都不能滿足你，我們還可以直接從源頭**覆蓋整個 minima 設定檔**。首先，我們要先找到電腦上的 minima 主題在哪裡，先使用以下指令：
@@ -117,7 +124,7 @@ $ bundle show minima
 
 舉例來說，預設文章頁面的日期會附在標題之下：
 
-![]({{ site.baseurl }}{% link assets/images/minima-title-example.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/minima-title-example.png %}){: width="500" }
 
 如果我希望日期出現在標題之上，我就可以到 minima theme 路徑中找到控制 post 頁面的檔案 `_layouts/post.html`。接著，我要**複製整個檔案，並且在我的網頁資料夾複製一樣的路徑**，也就是說，我的網頁資料夾根目錄會也要有一個 `_layouts/post.html`，並且要貼上 minima theme 的內容，之後再對這個檔案做修改。
 
@@ -126,6 +133,7 @@ $ bundle show minima
 1. 所有的變化會作用在**你所有使用這個 theme 的網站上**，我們只希望 local 覆寫
 2. 如果我們更新 minima 的 gem，原本的修改就會被更新覆蓋掉
 3. 如果你用 GitHub Pages 部署，你無法更改他們原生的 minima 路徑檔案，只能覆蓋
+
 </div>
 我在 `post.html` 裡面找到這個：
 
@@ -157,7 +165,7 @@ $ bundle show minima
 
 再重新啟動網站，就會看到標題改好了：
 
-![]({{ site.baseurl }}{% link assets/images/minima-title-after.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/minima-title-after.png %}){: width="500" }
 
 但是使用這種方法時請務必小心，因為 minima theme 路徑裡面許多檔案可能互相 import，如果沒有修改好可能會出現不預期的錯誤，請謹慎使用。
 
@@ -165,7 +173,7 @@ $ bundle show minima
 
 如果你也是用 Visual Code Studio 編輯 scss 檔案的話，有很大的機率你會看到這個錯誤出現在 scss 檔案第一行：
 
-![]({{ site.baseurl }}{% link assets/images/vsc-scss-error.png %})
+![]({{ site.baseurl }}{% link assets/images/obsidian/vsc-scss-error.png %})
 
 這其實是因為 Jekyll 的 frontmatter（最上面那兩行`---`）和 scss 的規定衝突了，因為 frontmatter 不是 scss 檔案認識的字串。不過不用擔心，這個錯誤可以直接忽視，你的 Jekyll 網站還是可以正常跑起來。
 
