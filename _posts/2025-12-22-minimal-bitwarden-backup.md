@@ -1,4 +1,5 @@
 ---
+generator: obsidian-2-jekyll
 layout: post
 share: true
 title: 用 Shell Script 打造 Bitwarden 備份工具

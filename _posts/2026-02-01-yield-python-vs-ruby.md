@@ -1,4 +1,5 @@
 ---
+generator: obsidian-2-jekyll
 layout: post
 share: true
 tags:
