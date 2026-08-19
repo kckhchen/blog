@@ -1,31 +1,31 @@
 // theme toggle
 body {
-  --bg-clr: #ffffff;
-  --font-clr: #231c33;
-  --link-clr: #231c33;
-  --site-title-clr: #231c33;
-  --code-bg-clr: #f6f5f4;
-  --card-bg-clr: #ffffff;
-  --card-border-clr: rgba(35, 28, 51, 0.15);
-  --post-link-clr: #231c33;
-  --font-muted-clr: rgba(35, 28, 51, 0.66);
-  --box-shadow-clr: rgba(226, 221, 215, 0.5);
-  --toc-bg-clr: #f6f5f4;
+  --bg-clr: #faf8f5;
+  --font-clr: #322b44;
+  --link-clr: #322b44;
+  --site-title-clr: #322b44;
+  --code-bg-clr: #f1eeea;
+  --card-bg-clr: #fffefc;
+  --card-border-clr: rgba(50, 43, 68, 0.14);
+  --post-link-clr: #322b44;
+  --font-muted-clr: rgba(50, 43, 68, 0.62);
+  --box-shadow-clr: rgba(216, 210, 202, 0.45);
+  --toc-bg-clr: #f1eeea;
   --highlight-clr: rgba(176, 176, 176, 0.3);
 }
 
 body.dark-mode {
-  --bg-clr: #1d1a26;
-  --font-clr: #efedf4;
-  --link-clr: #efedf4;
-  --site-title-clr: #efedf4;
+  --bg-clr: #262230;
+  --font-clr: #e6e3ec;
+  --link-clr: #e6e3ec;
+  --site-title-clr: #e6e3ec;
   --code-bg-clr: #49483e;
-  --card-bg-clr: #1d1a26;
-  --card-border-clr: rgba(239, 237, 244, 0.2);
-  --post-link-clr: #efedf4;
-  --font-muted-clr: rgba(239, 237, 244, 0.6);
-  --box-shadow-clr: rgba(0, 0, 0, 0.35);
-  --toc-bg-clr: #282434;
+  --card-bg-clr: #2b2637;
+  --card-border-clr: rgba(230, 227, 236, 0.16);
+  --post-link-clr: #e6e3ec;
+  --font-muted-clr: rgba(230, 227, 236, 0.6);
+  --box-shadow-clr: rgba(0, 0, 0, 0.25);
+  --toc-bg-clr: #2d2839;
   --highlight-clr: rgba(186, 186, 186, 0.3);
 }
 
