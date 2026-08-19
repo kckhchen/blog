@@ -52,6 +52,8 @@
   text-align: left;
   color: var(--font-clr);
   font-size: 1rem;
+  // excerpts are post content, so they keep the content font
+  font-family: $content-font-family;
 }
 
 .read-more {

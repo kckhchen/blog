@@ -3,6 +3,11 @@
   color: var(--font-clr);
 }
 
+// article body keeps the system font; Ysabeau is for site chrome only
+.post-content {
+  font-family: $content-font-family;
+}
+
 // Hey World-style centered post header
 .post-header {
   text-align: center;
