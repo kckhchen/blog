@@ -1,9 +1,9 @@
 title: Casey Chen
-author: ''
+author: ""
 email: kc.khchen@gmail.com
 description: Archive of my thoughts and notes.
-baseurl: '/blog'
-url: 'https://kckhchen.com'
+baseurl: "/blog"
+url: "https://kckhchen.com"
 github_username: kckhchen
 rss: RSS
 permalink: /:title/
@@ -17,10 +17,10 @@ plugins:
   - jekyll-paginate
 
 paginate: 10
-paginate_path: '/page:num/'
+paginate_path: "/page:num/"
 
 defaults:
   - scope:
-      path: ''
+      path: ""
     values:
       toc: true

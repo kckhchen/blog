@@ -23,7 +23,9 @@
   border: 1px solid var(--card-border-clr);
   padding: 0.25rem 0.8rem;
   border-radius: 2rem;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .pagination a:hover {

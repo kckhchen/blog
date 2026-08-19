@@ -7,28 +7,23 @@ html {
 
 // minima sass variables
 $base-font-family:
-  -apple-system,
-  'system-ui',
-  'Segoe UI',
-  Roboto,
-  'Helvetica Neue',
-  Arial,
+  -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial,
   sans-serif;
 $base-font-size: 18px;
 $content-width: 720px;
 $base-line-height: 1.6; // slightly larger for Chinese contents
 
-@import 'minima';
+@import "minima";
 
-@import 'base';
-@import 'header';
-@import 'footer';
-@import 'mathjax';
-@import '404';
-@import 'custom';
-@import 'pagination';
-@import 'post-content';
-@import 'callouts';
-@import 'nav-bar';
-@import 'toc';
-@import 'postcard';
+@import "base";
+@import "header";
+@import "footer";
+@import "mathjax";
+@import "404";
+@import "custom";
+@import "pagination";
+@import "post-content";
+@import "callouts";
+@import "nav-bar";
+@import "toc";
+@import "postcard";

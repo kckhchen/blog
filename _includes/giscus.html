@@ -17,7 +17,7 @@
 
 <script>
   function setGiscusTheme(theme) {
-    const iframe = document.querySelector('iframe.giscus-frame');
+    const iframe = document.querySelector("iframe.giscus-frame");
     if (!iframe) return;
 
     const message = {
@@ -26,15 +26,15 @@
       },
     };
 
-    iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    iframe.contentWindow.postMessage({ giscus: message }, "https://giscus.app");
   }
 
-  window.addEventListener('message', (event) => {
-    if (event.origin !== 'https://giscus.app') return;
+  window.addEventListener("message", (event) => {
+    if (event.origin !== "https://giscus.app") return;
     if (!(event.data && event.data.giscus)) return;
 
-    const isDark = document.body.classList.contains('dark-mode');
-    const theme = isDark ? 'dark' : 'light';
+    const isDark = document.body.classList.contains("dark-mode");
+    const theme = isDark ? "dark" : "light";
     setGiscusTheme(theme);
   });
 </script>

@@ -1,34 +1,34 @@
 <script>
-  const themeToggleBtn = document.getElementById('theme-toggle');
-  const themeIcon = document.querySelector('.theme-icon');
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeIcon = document.querySelector(".theme-icon");
   const body = document.body;
   function setTheme(theme) {
-    if (theme === 'dark') {
-      body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
+    if (theme === "dark") {
+      body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
     } else {
-      body.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
+      body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
     }
   }
 
-  const currentTheme = localStorage.getItem('theme');
+  const currentTheme = localStorage.getItem("theme");
   const systemPrefersDark = window.matchMedia(
-    '(prefers-color-scheme: dark)',
+    "(prefers-color-scheme: dark)",
   ).matches;
 
-  if (currentTheme === 'dark') {
-    setTheme('dark');
-  } else if (currentTheme === 'light') {
-    setTheme('light');
+  if (currentTheme === "dark") {
+    setTheme("dark");
+  } else if (currentTheme === "light") {
+    setTheme("light");
   } else {
-    setTheme(systemPrefersDark ? 'dark' : 'light');
+    setTheme(systemPrefersDark ? "dark" : "light");
   }
 
-  themeToggleBtn.addEventListener('click', function () {
+  themeToggleBtn.addEventListener("click", function () {
     setTimeout(() => {
-      const isDark = body.classList.contains('dark-mode');
-      const theme = isDark ? 'light' : 'dark';
+      const isDark = body.classList.contains("dark-mode");
+      const theme = isDark ? "light" : "dark";
       setTheme(theme);
       setGiscusTheme(theme);
     }, 10);
