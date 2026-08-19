@@ -7,12 +7,15 @@ html {
 
 // minima sass variables
 $base-font-family:
-  'Avenir',
   -apple-system,
+  'system-ui',
+  'Segoe UI',
+  Roboto,
   'Helvetica Neue',
+  Arial,
   sans-serif;
 $base-font-size: 18px;
-$content-width: 800px;
+$content-width: 720px;
 $base-line-height: 1.6; // slightly larger for Chinese contents
 
 @import 'minima';

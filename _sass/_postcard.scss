@@ -1,73 +1,72 @@
+.post-list {
+  margin-left: 0;
+  list-style: none;
+}
+
+.post-list > li {
+  margin-bottom: 2rem;
+}
+
 .post-card {
   position: relative;
-  padding: 25px;
-  border: 2px solid rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
+  padding: 2rem 2rem 2.5rem;
+  border: 1px solid var(--card-border-clr);
+  border-radius: 4px;
   background-color: var(--card-bg-clr);
+  box-shadow: 5px 5px 7px var(--box-shadow-clr);
+  text-align: center;
 
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
 }
 
 .post-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 2px 5px var(--box-shadow-clr);
   cursor: pointer;
 }
 
 .post-meta {
   color: var(--font-muted-clr);
+  font-size: 0.85rem;
+}
+
+.post-card-title {
+  margin: 0.4rem 0 1rem;
+  font-size: 1.6rem;
+  line-height: 1.3;
 }
 
 .post-excerpt {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  text-align: left;
+  color: var(--font-clr);
+  font-size: 1rem;
+}
 
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
+.read-more {
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid var(--card-border-clr);
+  border-radius: 2rem;
   color: var(--font-muted-clr);
-  font-size: 16px;
+  font-size: 0.8rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.read-time {
-  color: var(--font-muted-clr);
-  font-size: 14px;
-  line-height: 3;
-}
-
-.post-list-heading {
-  font-size: 0;
-  margin: 0;
-}
-
-.post-title {
-  font-weight: bold;
+.post-card:hover .read-more {
+  border-color: var(--font-muted-clr);
+  color: var(--font-clr);
 }
 
 .post-link {
   color: var(--post-link-clr);
-  font-weight: bold;
-  font-size: 24px;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .post-link:visited,
 .post-link:hover {
   color: var(--post-link-clr);
-}
-
-.post-link:hover {
   text-decoration: none;
-}
-
-.post-list li h3 {
-  margin: 10px 0 0px;
 }
 
 .stretched-link::after {
@@ -81,8 +80,10 @@
 }
 
 @media (max-width: 768px) {
-  .post-excerpt {
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+  .post-card {
+    padding: 1.5rem 1.2rem 2rem;
+  }
+  .post-card-title {
+    font-size: 1.35rem;
   }
 }

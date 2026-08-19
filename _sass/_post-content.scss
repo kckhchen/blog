@@ -3,6 +3,16 @@
   color: var(--font-clr);
 }
 
+// Hey World-style centered post header
+.post-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  .post-meta {
+    font-size: 0.85rem;
+  }
+}
+
 .post-content h1,
 h2,
 h3,
@@ -15,7 +25,9 @@ h6 {
 
 .post-title {
   font-size: 2rem;
-  line-height: 1.5em;
+  font-weight: 700;
+  line-height: 1.3em;
+  margin: 0.3rem 0 0;
 }
 
 .post-content h2 {
