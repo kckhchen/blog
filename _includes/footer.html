@@ -11,8 +11,13 @@
     </div>
   </div>
   <p class="host">
-    &copy; 2026 Kuan-Hung Chen. Hosted on GitHub Pages and Powered by Jekyll.
+    &copy; <span id="footer-year">2026</span> Kuan-Hung Chen. Hosted on GitHub
+    Pages and Powered by Jekyll.
   </p>
+  <script>
+    document.getElementById("footer-year").textContent =
+      new Date().getFullYear();
+  </script>
   <p class="host">
     Blog design inspired by <a href="https://world.hey.com/dhh">DHH</a>
   </p>
