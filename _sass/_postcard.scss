@@ -36,6 +36,13 @@
   line-height: 1.3;
 }
 
+.read-time {
+  display: block;
+  color: var(--font-muted-clr);
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
 .post-excerpt {
   text-align: left;
   color: var(--font-clr);
