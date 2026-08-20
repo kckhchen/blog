@@ -62,7 +62,12 @@ img {
   margin: 1rem 0;
 }
 
-body.dark-mode {
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body {
+    @import "monokai";
+  }
+}
+:root[data-theme="dark"] body {
   @import "monokai";
 }
 

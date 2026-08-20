@@ -1,36 +1,47 @@
 <script>
   const themeToggleBtn = document.getElementById("theme-toggle");
-  const themeIcon = document.querySelector(".theme-icon");
-  const body = document.body;
-  function setTheme(theme) {
-    if (theme === "dark") {
-      body.classList.add("dark-mode");
-      localStorage.setItem("theme", "dark");
-    } else {
-      body.classList.remove("dark-mode");
-      localStorage.setItem("theme", "light");
+  const sunIcon = themeToggleBtn.querySelector(".icon-sun");
+  const moonIcon = themeToggleBtn.querySelector(".icon-moon");
+  const themeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  function storedTheme() {
+    try {
+      return localStorage.getItem("theme");
+    } catch {
+      return null;
     }
   }
 
-  const currentTheme = localStorage.getItem("theme");
-  const systemPrefersDark = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
-
-  if (currentTheme === "dark") {
-    setTheme("dark");
-  } else if (currentTheme === "light") {
-    setTheme("light");
-  } else {
-    setTheme(systemPrefersDark ? "dark" : "light");
+  function isDark() {
+    const attr = document.documentElement.getAttribute("data-theme");
+    if (attr) return attr === "dark";
+    return themeQuery.matches;
   }
 
-  themeToggleBtn.addEventListener("click", function () {
-    setTimeout(() => {
-      const isDark = body.classList.contains("dark-mode");
-      const theme = isDark ? "light" : "dark";
-      setTheme(theme);
-      setGiscusTheme(theme);
-    }, 10);
+  function renderThemeToggle() {
+    const dark = isDark();
+    sunIcon.classList.toggle("hidden", !dark);
+    moonIcon.classList.toggle("hidden", dark);
+    themeToggleBtn.setAttribute("aria-pressed", String(dark));
+    if (typeof setGiscusTheme === "function") {
+      setGiscusTheme(dark ? "dark" : "light");
+    }
+  }
+
+  themeToggleBtn.addEventListener("click", () => {
+    const next = isDark() ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch {
+      /* private mode */
+    }
+    renderThemeToggle();
   });
+
+  themeQuery.addEventListener("change", () => {
+    if (!storedTheme()) renderThemeToggle();
+  });
+
+  renderThemeToggle();
 </script>

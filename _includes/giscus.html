@@ -33,8 +33,10 @@
     if (event.origin !== "https://giscus.app") return;
     if (!(event.data && event.data.giscus)) return;
 
-    const isDark = document.body.classList.contains("dark-mode");
-    const theme = isDark ? "dark" : "light";
-    setGiscusTheme(theme);
+    const attr = document.documentElement.getAttribute("data-theme");
+    const isDark = attr
+      ? attr === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setGiscusTheme(isDark ? "dark" : "light");
   });
 </script>
