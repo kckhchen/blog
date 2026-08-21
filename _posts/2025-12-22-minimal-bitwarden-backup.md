@@ -1,4 +1,5 @@
 ---
+date: 2025-12-22
 generator: obsidian-2-jekyll
 layout: post
 share: true
