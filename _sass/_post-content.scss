@@ -109,6 +109,24 @@ img {
   margin: 1rem 0;
 }
 
+.post-content table {
+  color: var(--font-clr);
+  border-color: var(--card-border-clr);
+
+  tr:nth-child(even) {
+    background-color: var(--table-stripe-clr);
+  }
+
+  th {
+    background-color: var(--toc-bg-clr);
+    border-color: var(--card-border-clr);
+  }
+
+  td {
+    border-color: var(--card-border-clr);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) body {
     @import "monokai";
