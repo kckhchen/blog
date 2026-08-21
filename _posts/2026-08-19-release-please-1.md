@@ -144,7 +144,7 @@ jobs:
 }
 ```
 
-`release-type` 對應多種不同語言 package 的版本更新方式，但如果只是散裝的 CLI 工具，用最基本的 `simple` 就可以了。其他更進階的設定會在[下一篇文章]({{ site.baseurl }}{% link _posts/2026-08-20-release-please-2.md %})提到。
+`release-type` 對應多種不同語言 package 的版本更新方式，包含 `python`、`ruby` 或是 `node` 等等，會自動更新 packages 中的版號，但如果只是散裝的 CLI 工具，用最基本的 `simple` 就可以了。其他更進階的設定會在[下一篇文章]({{ site.baseurl }}{% link _posts/2026-08-20-release-please-2.md %})提到。
 
 最後，我們需要一個 manifest 檔案告訴 `release-please` 該從哪一個版本開始作為更新版號的基礎，這時候就會需要在根目錄創建一個 `.release-please-manifest.json`，裡面只有短短一行設定，標注目前**已發布**的最新版號，例如：
 
