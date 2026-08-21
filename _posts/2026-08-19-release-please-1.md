@@ -97,7 +97,7 @@ feat(api)!: Switch to FastAPI
 
 當 `release-please` 決定好版本升級方向之後，會自己在 GitHub repo 上開一個 branch 並開 PR 給我們，看起來會像這樣：
 
-![]({{ site.baseurl }}{% link assets/images/obsidian/release-please-pr-screenshot.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/release-please-pr-screenshot.png %}){: width="800" }
 
 可以發現所有的更新內容都已經幫我們寫好、分類好、排版好了。我們只要審核過之後，按下 Merge PR，我們的 main 就會有新的 release 了！
 
@@ -162,7 +162,7 @@ jobs:
 </div>
 最後，千萬要記得在 repo 上面給 Action Bot 開 PR 的權限。在 repo 頁面進入 Settings -> Actions -> General，滑到下面去之後把 **"Allow GitHub Actions to create and approve pull requests"** 設定給打勾就可以了：
 
-![]({{ site.baseurl }}{% link assets/images/obsidian/allow-pr-screenshot.png %}){: width="500" }
+![]({{ site.baseurl }}{% link assets/images/obsidian/allow-pr-screenshot.png %}){: width="800" }
 
 <div class="callout callout-info" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="info"></i><span class="callout-title-text">小提醒</span></div>
 上面那個 "Read and write permissions" 如果沒有其他特殊原因建議不用打開。我們在 `.yml` 檔中已經給了 Action 編輯和開 PR 的權限了，所以這裡可以保持關閉，保持 repo 安全。
