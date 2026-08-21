@@ -47,6 +47,12 @@ h6 {
   font-size: 1.1rem;
 }
 
+pre,
+code {
+  border: none;
+  border-radius: 6px;
+}
+
 code {
   background-color: var(--code-bg-clr);
   font-size: 0.85rem;
