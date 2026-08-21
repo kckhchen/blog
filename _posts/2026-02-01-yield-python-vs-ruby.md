@@ -1,6 +1,6 @@
 ---
 date: 2026-02-01
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 tags:

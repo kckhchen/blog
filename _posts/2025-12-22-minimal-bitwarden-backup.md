@@ -1,6 +1,6 @@
 ---
 date: 2025-12-22
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: 用 Shell Script 打造 Bitwarden 備份工具

@@ -1,6 +1,6 @@
 ---
 date: 2026-08-19
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: 自動化版控 release-please 從入門到進階（一）：SemVer 和 Conventional Commits

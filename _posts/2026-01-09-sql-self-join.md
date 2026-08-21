@@ -1,6 +1,6 @@
 ---
 date: 2026-01-09
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: 從捷運轉乘問題看 SQL SELF JOIN

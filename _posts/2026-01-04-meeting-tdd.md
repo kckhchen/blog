@@ -1,6 +1,6 @@
 ---
 date: 2026-01-04
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: 測試驅動開發（TDD）在做什麼？

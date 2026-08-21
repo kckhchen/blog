@@ -1,6 +1,6 @@
 ---
 date: 2026-01-28
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: 修改 Jekyll minima 主題的三種方式

@@ -1,6 +1,6 @@
 ---
 date: 2026-01-26
-generator: obsidian-2-jekyll
+generator: intaglio
 layout: post
 share: true
 title: Ruby 的 Symbol 是什麼？
