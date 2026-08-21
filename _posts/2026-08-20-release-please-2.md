@@ -6,7 +6,7 @@ share: true
 title: 自動化版控 release-please 從入門到進階（二）：release-please 進階用法和設定
 ---
 
-在[上一篇文章]({{ site.baseurl }}{% link _posts/2026-08-19-release-please-1.md %})中我們了解了 Conventional Commits 以及 SemVer 如何使用，以及這兩個規範如何與 `release-please` 協作進行自動化版控。這篇文章將會專注在 `release-please` 的強大進階功能和設定，讓大家的使用體驗更順暢。
+在[上一篇文章]({{ site.baseurl }}{% link _posts/2026-08-19-release-please-1.md %})中我們了解了 Conventional Commits 以及 SemVer 的概念，以及這兩個規範如何與 `release-please` 協作進行自動化版控。這篇文章將會專注在 `release-please` 的強大進階功能和設定，讓大家的使用體驗更順暢。
 
 ## 進階設定：Pre-Major 版本管理
 
