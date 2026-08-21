@@ -2,7 +2,9 @@
   box-sizing: border-box;
   color: var(--font-clr);
   padding: 20px;
-  border-radius: 10px;
+  border: 1px solid var(--card-border-clr);
+  border-radius: 4px;
+  box-shadow: 5px 5px 7px var(--box-shadow-clr);
   background-color: var(--toc-bg-clr);
   margin-bottom: 2rem;
 }
