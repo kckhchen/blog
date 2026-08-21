@@ -93,7 +93,7 @@ feat(api)!: Switch to FastAPI
 而所有其他 commit 種類只要有 `!` 注記重大變更，也會觸發 release，其中官方事先提供 section 標題的有：`chore`、`docs`、`style`、`refactor`、`test`、`build`、`ci`
 
 </div>
-這些是 `release-please` 的預設行為，全部都可以依照需求客製化，這些我們會在下一篇文章提到。
+這些是 `release-please` 的預設行為，全部都可以依照需求客製化，這些我們會在[下一篇文章]({{ site.baseurl }}{% link _posts/2026-08-20-release-please-2.md %})提到。
 
 當 `release-please` 決定好版本升級方向之後，會自己在 GitHub repo 上開一個 branch 並開 PR 給我們，看起來會像這樣：
 
@@ -144,7 +144,7 @@ jobs:
 }
 ```
 
-`release-type` 對應多種不同語言 package 的版本更新方式，包含 `python`、`ruby` 或是 `node` 等等，會自動更新 packages 中的版號，但如果只是散裝的 CLI 工具，用最基本的 `simple` 就可以了。其他更進階的設定會在下一篇文章提到。
+`release-type` 對應多種不同語言 package 的版本更新方式，包含 `python`、`ruby` 或是 `node` 等等，會自動更新 packages 中的版號，但如果只是散裝的 CLI 工具，用最基本的 `simple` 就可以了。其他更進階的設定會在[下一篇文章]({{ site.baseurl }}{% link _posts/2026-08-20-release-please-2.md %})提到。
 
 最後，我們需要一個 manifest 檔案告訴 `release-please` 該從哪一個版本開始作為更新版號的基礎，這時候就會需要在根目錄創建一個 `.release-please-manifest.json`，裡面只有短短一行設定，標注目前**已發布**的最新版號，例如：
 
@@ -172,7 +172,7 @@ jobs:
 
 要再特別注意的是，由於 `release-please` 會讀所有的 Conventional Commits，如果有開 PR 再 merge 新功能或維修的習慣，請盡量使用 squash merge，避免中途那些無關的 commit 也一起被涵括進 Changelog 裡面。而 squash merge 之後的 commit message 預設會是 PR title，所以也要符合 Conventional Commits 格式。
 
-當然，這只是 `release-please` 強大功能跟設定的冰山一角，更進階的使用方法我們會在下一篇文章談到。
+當然，這只是 `release-please` 強大功能跟設定的冰山一角，更進階的使用方法我們會在[下一篇文章]({{ site.baseurl }}{% link _posts/2026-08-20-release-please-2.md %})談到。
 
 <div class="callout callout-info" markdown="1"><div class="callout-title"><i class="callout-icon" data-lucide="info"></i><span class="callout-title-text">小提醒</span></div>
 `release-please` 預設行為是不會套用前面所說的 `v0.y.z` 的社群慣例的，需要特別修改 `release-please-config.json` 進行設定，下一篇一樣會提到。
