@@ -2,7 +2,7 @@
 body {
   --bg-clr: #faf8f5;
   --font-clr: #322b44;
-  --link-clr: #322b44;
+  --link-clr: #5646a8;
   --site-title-clr: #322b44;
   --code-bg-clr: #f1eeea;
   --card-bg-clr: #fffefc;
@@ -18,7 +18,7 @@ body {
 @mixin dark-theme-vars {
   --bg-clr: #262230;
   --font-clr: #e6e3ec;
-  --link-clr: #e6e3ec;
+  --link-clr: #a89bf0;
   --site-title-clr: #e6e3ec;
   --code-bg-clr: #3f3852;
   --card-bg-clr: #2b2637;
