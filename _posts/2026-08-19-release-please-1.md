@@ -3,7 +3,7 @@ date: 2026-08-19
 generator: intaglio
 layout: post
 share: true
-title: 自動化版控 release-please 從入門到進階（一）：SemVer 和 Conventional Commits
+title: 自動化版控從入門到進階（一）：SemVer 和 Conventional Commits
 ---
 
 當開發程式到一段時間，工具越來越多人使用後，就會開始有版本管理的需求。Google 開發的 `release-please` 正是為此而生的自動化版控工具，可以輕鬆透過 GitHub Actions 發布、管理 release 版本。這篇文章將會介紹其功能、用法，以及注意事項。
