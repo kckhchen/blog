@@ -109,6 +109,14 @@ img {
   margin: 1rem 0;
 }
 
+// prevent force-slacking for chinese in quotes
+blockquote {
+  font-style: normal;
+  letter-spacing: normal;
+  color: var(--font-muted-clr);
+  border-left-color: var(--card-border-clr);
+}
+
 .post-content table {
   color: var(--font-clr);
   border-color: var(--card-border-clr);
