@@ -5,12 +5,24 @@ html {
   font-size: 18px;
 }
 
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 // minima sass variables
 // Ysabeau for the site chrome (masthead, cards, footer...);
 // post content resets to $content-font-family (see _post-content.scss)
 $base-font-family:
-  "Ysabeau", -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif;
+  "Ysabeau",
+  -apple-system,
+  "system-ui",
+  "Segoe UI",
+  Roboto,
+  "Helvetica Neue",
+  Arial,
+  sans-serif;
 $content-font-family:
   -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial,
   sans-serif;
