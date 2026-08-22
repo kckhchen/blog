@@ -77,6 +77,7 @@
   color: var(--post-link-clr);
   font-weight: 700;
   text-decoration: none;
+  font-size: inherit;
 }
 
 .post-link:visited,
@@ -100,6 +101,6 @@
     padding: 1.5rem 1.2rem 2rem;
   }
   .post-card-title {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
 }
