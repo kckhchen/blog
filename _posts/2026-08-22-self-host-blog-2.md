@@ -80,7 +80,7 @@ jobs:
       - uses: kckhchen/intaglio@v1
         with:
           jekyll-repo: username/jekyll-repo       # <- 這邊改成你的 Jekyll repo
-          token: ${{ secrets.BLOG_PUSH_TOKEN }}
+          token: ${% raw %}{{ secrets.BLOG_PUSH_TOKEN }}{% endraw %}
           args: --update --force --yes
 ```
 
