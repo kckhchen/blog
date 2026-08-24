@@ -1,13 +1,13 @@
 title: Casey Chen
-author: ""
+author: "Casey Chen"
 email: kc.khchen@gmail.com
-description: Archive of my thoughts and notes.
+description: Follow my journey on learning new things.
 baseurl: "/blog"
 url: "https://kckhchen.com"
 github_username: kckhchen
 rss: RSS
 permalink: /:title/
-timezone: Asian/Taipei
+timezone: Asia/Taipei
 
 show_excerpts: true
 
@@ -16,12 +16,14 @@ plugins:
   - jekyll-feed
   - jekyll-toc
   - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-last-modified-at
 
 paginate: 10
 paginate_path: "/page:num/"
 
 defaults:
-  - scope:
-      path: ""
+  - scope: { path: "", type: posts }
     values:
       toc: true
