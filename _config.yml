@@ -34,6 +34,3 @@ defaults:
     values:
       toc: true
       author: "Casey Chen"
-
-
-exclude: [README.md, Gemfile, Gemfile.lock]
