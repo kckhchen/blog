@@ -1,15 +1,21 @@
-title: Casey Chen
-author: "Casey Chen"
-email: kc.khchen@gmail.com
-description: Follow my journey on learning new things.
-baseurl: "/blog"
 url: "https://kckhchen.com"
+baseurl: "/blog"
+
+title: Casey Chen
+description: Follow my journey on learning new things.
+lang: zh-TW
+
+author:
+  name: "Casey Chen"
+  url: "https://khkhchen.com"
+email: kc.khchen@gmail.com
 github_username: kckhchen
+
 rss: RSS
+show_excerpts: true
 permalink: /:title/
 timezone: Asia/Taipei
 
-show_excerpts: true
 
 theme: minima
 plugins:
@@ -27,3 +33,7 @@ defaults:
   - scope: { path: "", type: posts }
     values:
       toc: true
+      author: "Casey Chen"
+
+
+exclude: [README.md, Gemfile, Gemfile.lock]
