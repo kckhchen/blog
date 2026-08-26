@@ -193,7 +193,7 @@ body {
 $base-font-size: 18px; // 再定義或 import minima
 ```
 
-至於要寫什麼 css 樣式其實沒有很重要，因為後面 import minima 的時候這個樣式就會被覆蓋掉了～他只是一個阻止 VSC 報錯的小裝飾而已。
+至於要寫什麼 css 樣式其實沒有很重要，因為後面 import minima 的時候這個樣式就會被覆蓋掉了～他只是一個阻止 VSC 報錯的小裝飾而已，就算不加也不會怎樣。
 
 ## 結語
 
