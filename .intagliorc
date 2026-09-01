@@ -1,0 +1,24 @@
+# Intaglio configuration file. This defines JEKYLL_DIR
+# i.e., Intaglio sends your processed posts here.
+# You can left them all commented if you don't want to change any config.
+
+# Absolute path to your Obsidian vault.
+# NOTE: This absoluate vault includes your user name,
+# either consider exporting VAULT_DIR as environment variable:
+#   export VAULT_DIR=~/Obsidian/vault
+# or set it up here, but add .intagliorc to your .gitignore
+VAULT_DIR="/Users/casey/casey-vault/"
+
+# Everything below has a default value.
+# Please leave them commented if you don't wish to change them.
+# POST_FOLDER="_posts"
+# IMG_FOLDER="assets/images/obsidian"
+# INCLUDES_FOLDER="_includes"
+
+# "inject_cdn" injects a MathJax CDN when math is detected to be present
+# "metadata" includes "math: true" in the frontmatter if your theme supports math natively.
+# MATH_RENDERING_MODE="inject_cdn"
+
+# If your theme or Jekyll 4.x includes site.baseurl,
+# set this to "true" to prevent double baseurl like "/blog/blog/..."
+# PREVENT_DOUBLE_BASEURL="false"
