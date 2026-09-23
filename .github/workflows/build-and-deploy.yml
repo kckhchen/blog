@@ -3,6 +3,10 @@ name: Build and Deploy Jekyll Site
 on:
   push:
     branches: ["main"]
+  # Margin entries live in Memos; rebuild to pick up new ones.
+  schedule:
+    # 16:00 UTC = 00:00 Asia/Taipei
+    - cron: "0 16 * * *"
   workflow_dispatch:
 
 permissions:
@@ -28,6 +32,11 @@ jobs:
         with:
           ruby-version: "3.4"
           bundler-cache: true
+
+      - name: Fetch margin entries from Memos
+        run: ruby _scripts/fetch-margin.rb
+        env:
+          MEMOS_TOKEN: ${{ secrets.MEMOS_TOKEN }}
 
       - name: Build with Jekyll
         run: bundle exec jekyll build
