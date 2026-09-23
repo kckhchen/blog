@@ -1,0 +1,28 @@
+{%- comment -%} One margin note. `entry` is the document; `link` makes the date a permalink. {%- endcomment -%}
+<article class="margin-entry h-entry">
+  <div class="margin-content e-content">{{ include.entry.content }}</div>
+
+  {%- assign atts = include.entry.attachments -%}
+  {%- if atts.size > 0 -%}
+  <div class="margin-attachments">
+    {%- for att in atts -%}
+    {%- if att.path -%}{%- assign src = att.path | relative_url -%}{%- else -%}{%- assign src = att.url -%}{%- endif -%}
+    {%- if att.type contains "image/" -%}
+    <a href="{{ src }}"><img src="{{ src }}" alt="{{ att.filename | escape }}" loading="lazy" /></a>
+    {%- else -%}
+    <a class="margin-file" href="{{ src }}">{{ att.filename | escape }}</a>
+    {%- endif -%}
+    {%- endfor -%}
+  </div>
+  {%- endif -%}
+
+  <footer class="post-meta">
+    {%- assign stamp = include.entry.date | date: "%Y-%m-%d %H:%M" -%}
+    {%- if include.link -%}
+    <a class="u-url" href="{{ include.entry.url | relative_url }}"><time class="dt-published" datetime="{{ include.entry.date | date_to_xmlschema }}">{{ stamp }}</time></a>
+    {%- else -%}
+    <time class="dt-published" datetime="{{ include.entry.date | date_to_xmlschema }}">{{ stamp }}</time>
+    {%- endif -%}
+    {%- for tag in include.entry.tags %} · #{{ tag | escape }}{% endfor -%}
+  </footer>
+</article>

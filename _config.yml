@@ -29,8 +29,22 @@ plugins:
 paginate: 10
 paginate_path: "/page:num/"
 
+collections:
+  margin:
+    output: true
+    permalink: /margin/:name/
+
+feed:
+  collections:
+    margin:
+      path: "/margin/feed.xml"
+
 defaults:
   - scope: { path: "", type: posts }
     values:
       toc: true
+      author: "Casey Chen"
+  - scope: { path: "", type: margin }
+    values:
+      layout: margin
       author: "Casey Chen"

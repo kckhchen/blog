@@ -1,0 +1,22 @@
+---
+layout: default
+title: Margin
+description: 潦草的、隨想的、任意的、轉瞬即逝的
+---
+
+<div class="margin">
+  <h1 class="page-heading">Margin</h1>
+  <p class="margin-intro">
+    {{ page.description }}
+    <a href="{{ '/margin/feed.xml' | relative_url }}">RSS</a>
+  </p>
+
+  {%- assign entries = site.margin | sort: "date" | reverse -%}
+  {%- if entries.size == 0 -%}
+  <p class="post-meta">還沒有東西。</p>
+  {%- endif -%}
+  {%- for entry in entries -%}
+  {% include margin-entry.html entry=entry link=true %}
+  {%- endfor -%}
+  {% include copy-code.html %}
+</div>
