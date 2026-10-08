@@ -31,9 +31,7 @@ PUBLISH_TAG = %r{(?<=\A|\s)##{Regexp.escape(TAG)}(?:/\S*)?(?=\s|\z)}
 def get(path, query = {})
   uri = URI("#{BASE}#{path}")
   uri.query = URI.encode_www_form(query) unless query.empty?
-  req = Net::HTTP::Get.new(uri)
-  req['Authorization'] = "Bearer #{TOKEN}"
-  res = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') { |http| http.request(req) }
+  res = Net::HTTP.get_response(uri, { 'Authorization' => "Bearer #{TOKEN}" })
   abort "GET #{uri.path} -> #{res.code}: #{res.body.to_s[0, 200]}" unless res.is_a?(Net::HTTPSuccess)
   res.body
 end
@@ -66,14 +64,14 @@ end
 
 def download_attachments(memo, id)
   memo.fetch('attachments', []).map do |att|
-    if att['externalLink'].to_s != ''
-      { 'url' => att['externalLink'], 'filename' => att['filename'], 'type' => att['type'] }
-    else
+    if att['externalLink'].to_s == ''
       filename = safe_filename(att['filename'])
       dir = File.join(ASSETS_DIR, id)
       FileUtils.mkdir_p(dir)
       File.binwrite(File.join(dir, filename), get("/file/#{att['name']}/#{URI.encode_uri_component(att['filename'])}"))
       { 'path' => "/assets/margin/#{id}/#{filename}", 'filename' => att['filename'], 'type' => att['type'] }
+    else
+      { 'url' => att['externalLink'], 'filename' => att['filename'], 'type' => att['type'] }
     end
   end
 end

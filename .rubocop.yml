@@ -1,0 +1,12 @@
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - _site/**/*
+    - vendor/**/*
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 25
