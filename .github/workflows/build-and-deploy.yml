@@ -34,7 +34,7 @@ jobs:
           bundler-cache: true
 
       - name: Fetch margin entries from Memos
-        run: ruby _scripts/fetch-margin.rb
+        run: ruby _scripts/fetch_margin.rb
         env:
           MEMOS_TOKEN: ${{ secrets.MEMOS_TOKEN }}
 
